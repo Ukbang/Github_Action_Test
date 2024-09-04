@@ -11,6 +11,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Get the latest commit message
-      - name: start training
+      # 2. Set up Python Version 3.x
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 3. Install library
+      - name: Install library
+        run: pip install -r requirements.txt
+
+      # 4. Start Testing
+      - name: Start Training
         run: python main.py
