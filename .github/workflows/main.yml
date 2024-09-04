@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']  # 여러 Python 버전 지정
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']  # 여러 Python 버전 지정
         
     steps:
       # 1. Checkout the repository
@@ -23,7 +23,9 @@ jobs:
 
       # 3. Install library
       - name: Install library
-        run: pip install -r requirements.txt
+        run: |
+           pip install tensorflow==2.10
+           pip install numpy==1.21
 
       # 4. Start Testing
       - name: Start Training
