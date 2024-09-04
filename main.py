@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # argparse로 터미널 인자를 처리합니다.
     parser = argparse.ArgumentParser(description='데이터셋 로드 스크립트')
     parser.add_argument('--dataset_name', nargs="?", default="mnist", type=str, help='로드할 데이터셋의 이름 (예: mnist, fashion_mnist, cifar10)')
-    parser.add_argument('--epochs', nargs="?", default=10, type=int, help='훈련 횟수')
+    parser.add_argument('--epochs', nargs="?", default=1, type=int, help='훈련 횟수')
     
     args = parser.parse_args()
 
