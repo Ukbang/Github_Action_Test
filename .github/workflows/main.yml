@@ -6,6 +6,10 @@ jobs:
   Test: # jobs의 이름
     runs-on: ubuntu-latest # 우분투 최신 버전 사용
 
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']  # 여러 Python 버전 지정
+        
     steps:
       # 1. Checkout the repository
       - name: Checkout repository
@@ -15,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: ${{ matrix.python-version }}  # 각 버전으로 테스트
 
       # 3. Install library
       - name: Install library
