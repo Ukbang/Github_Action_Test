@@ -1,0 +1,16 @@
+name: Main Test
+
+on: [push]
+
+jobs:
+  Test: # jobs의 이름
+    runs-on: ubuntu-latest # 우분투 최신 버전 사용
+
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Get the latest commit message
+      - name: start training
+        run: python main.py
