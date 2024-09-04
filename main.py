@@ -23,6 +23,7 @@ def main(dataset_name, epochs):
     print(f"테스트 데이터 Accuracy: {accuracy:.4f}")
 
 
+
 if __name__ == '__main__':
     # argparse로 터미널 인자를 처리합니다.
     parser = argparse.ArgumentParser(description='데이터셋 로드 스크립트')
